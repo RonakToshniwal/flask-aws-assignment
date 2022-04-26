@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>EC2 Instances Table</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>teir</th>
+        <th>Public Ip</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    {%for row in rows%}
+    <tr>
+        
+        <td>{{row.id}}</td>
+        <td>{{row.instance_type}}</td>
+        <td>{{row.public_ip_address}}</td>
+        <td><a href="/delec2/{{row.id}}">delete</a></td>
+    </tr>
+    {%endfor%}
+   
+</tbody>
+</table>
+
+</body>
+</html>
+
